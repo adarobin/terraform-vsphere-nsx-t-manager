@@ -90,6 +90,15 @@ resource "vsphere_virtual_machine" "nsxt_manager" {
     }
   }
 
+  provisioner "local-exec" {
+    command = "${path.module}/nsxt-wait-for-startup.sh"
+    environment = {
+      NSXT_MANAGER_HOSTNAME = var.hostname
+      NSXT_USERNAME         = "admin"
+      NSXT_PASSWORD         = random_password.admin_password.result
+    }
+  }
+
   lifecycle {
     ignore_changes = [
       // it looks like some of the properties get deleted from the VM after it is deployed
