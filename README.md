@@ -60,7 +60,7 @@ No Modules.
 | memory\_override | The ammount of memory the NSX-t Manager Appliance should have. Defaults to 0 which uses the memory size of the deployment selected. | `number` | `0` | no |
 | netmask | The netmask of the nested ESXi hosts. | `string` | n/a | yes |
 | network\_id | The ID of the network the NSX-T Manager Appliance should be attached to. | `string` | n/a | yes |
-| ntp | The NTP server for the NSX-T Manager Appliance. | `string` | n/a | yes |
+| ntp | The NTP server for the NSX-T Manager Appliance. | `string` | `"pool.ntp.org"` | no |
 | ova\_path | The full path to the NSX-T Unified Appliance OVA. | `string` | n/a | yes |
 | resource\_pool\_id | The ID of the resource pool the NSX-T Manager Appliance should be created in. | `string` | n/a | yes |
 

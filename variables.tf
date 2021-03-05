@@ -122,6 +122,7 @@ variable "dns" {
 
 variable "ntp" {
   type        = string
+  default     = "pool.ntp.org"
   description = "The NTP server for the NSX-T Manager Appliance."
 }
 
