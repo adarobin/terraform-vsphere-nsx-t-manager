@@ -20,7 +20,7 @@ while true; do
         break
     fi
 
-    echo "Management Cluster status was $mstatus and Control Cluster status was $status. Sleeping for 20 seconds."
+    echo "Management Cluster status was $mstatus and Control Cluster status was $cstatus. Sleeping for 20 seconds."
     sleep 20
 done
 
