@@ -68,7 +68,7 @@ No Modules.
 
 | Name | Description |
 |------|-------------|
-| admin\_password | n/a |
-| audit\_password | n/a |
-| root\_password | n/a |
+| admin\_password | The admin password generated for the NSX-T Manager |
+| audit\_password | The audit password generated for the NSX-T Manager |
+| root\_password | The root password generated for the NSX-T Manager |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
