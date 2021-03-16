@@ -47,14 +47,17 @@ resource "vsphere_virtual_machine" "nsxt_manager" {
   nested_hv_enabled      = data.vsphere_ovf_vm_template.ova.nested_hv_enabled
   memory                 = var.memory_override > 0 ? var.memory_override : data.vsphere_ovf_vm_template.ova.memory
   memory_hot_add_enabled = data.vsphere_ovf_vm_template.ova.memory_hot_add_enabled
-  //swap_placement_policy  = data.vsphere_ovf_vm_template.ova.swap_placement_policy
-  annotation           = data.vsphere_ovf_vm_template.ova.annotation
-  guest_id             = data.vsphere_ovf_vm_template.ova.guest_id
-  alternate_guest_name = data.vsphere_ovf_vm_template.ova.alternate_guest_name
-  //firmware               = data.vsphere_ovf_vm_template.ova.firmware
+  annotation             = data.vsphere_ovf_vm_template.ova.annotation
+  guest_id               = data.vsphere_ovf_vm_template.ova.guest_id
+  alternate_guest_name   = data.vsphere_ovf_vm_template.ova.alternate_guest_name
+  scsi_type              = data.vsphere_ovf_vm_template.ova.scsi_type
+  scsi_controller_count  = data.vsphere_ovf_vm_template.ova.scsi_controller_count
+  sata_controller_count  = data.vsphere_ovf_vm_template.ova.sata_controller_count
+  ide_controller_count   = data.vsphere_ovf_vm_template.ova.ide_controller_count
+  # swap_placement_policy  = data.vsphere_ovf_vm_template.ova.swap_placement_policy
+  # firmware               = data.vsphere_ovf_vm_template.ova.firmware
 
   enable_logging = true
-  scsi_type      = "lsilogic"
 
   network_interface {
     network_id     = var.network_id
