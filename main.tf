@@ -53,7 +53,11 @@ resource "vsphere_virtual_machine" "nsxt_manager" {
   scsi_type              = data.vsphere_ovf_vm_template.ova.scsi_type
   scsi_controller_count  = data.vsphere_ovf_vm_template.ova.scsi_controller_count
   sata_controller_count  = data.vsphere_ovf_vm_template.ova.sata_controller_count
-  ide_controller_count   = data.vsphere_ovf_vm_template.ova.ide_controller_count
+
+  # This is set to 0 in the template which breaks deployment
+  # ide_controller_count   = data.vsphere_ovf_vm_template.ova.ide_controller_count
+
+  # These are not set properly by the template
   # swap_placement_policy  = data.vsphere_ovf_vm_template.ova.swap_placement_policy
   # firmware               = data.vsphere_ovf_vm_template.ova.firmware
 
